@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--把对象的创建交给spring来管理-->
+
+    <bean id="accountDao" class="com.kou.dao.impl.AccountDaoImpl"></bean>
+
+    <!--spring对bean的管理细节
+    1.创建bean的三种方法
+    2.bean对象的作用范围
+    3.bean对象的生命周期
+    -->
+
+    <!--第一种：使用的是类中默认构造函数创建-->
+
+
+    <!--第二种：使用普通工厂中的方法创建对象； 即某个类中的方法创建对象，并放到spring容器-->
+    <!--
+    <bean id="InstanceFactory" class="com.kou.factory.InstanceFactory"></bean>
+    <bean id="accountService" factory-bean="InstanceFactory" factory-method="getIAccountService"></bean>
+    -->
+    <!--第三种：使用工厂中的静态方法创建对象，-->
+    <!--
+    <bean id="accountService" class="com.kou.factory.staticFactory" factory-method="getIAccountService"></bean>
+    -->
+
+    <!--spring的依赖注入  依赖关系的管理就交给spring来维护。
+    即当前类需要用到其他类的对象时，由spring为我们提供。
+    维护过程就称为依赖注入
+    -->
+
+    <!--第一种：使用构造函数注入-->
+
+
+    <bean id="accountService" class="com.kou.service.impl.AccountServiceImpl"></bean>
+
+
+
+
+</beans>
